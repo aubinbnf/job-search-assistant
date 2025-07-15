@@ -16,7 +16,7 @@ class PDFChunker:
                 pages.append({"text": text.strip(), "page": page_num + 1})
         return pages
 
-    def chunk_text(self, text: str) -> List[str]:
+    def token_chunk(self, text: str) -> List[str]:
         # Nettoyage et découpage simple par tokens
         sentences = re.split(r'(?<=[\.\!\?])\s+', text)
         chunks = []
@@ -35,13 +35,14 @@ class PDFChunker:
             chunks.append(" ".join(current_chunk))
 
         return chunks
+    
 
     def chunk_pdf(self, file_path: str) -> List[dict]:
         pages = self.extract_text_from_pdf(file_path)
         chunks = []
 
         for page in pages:
-            for chunk in self.chunk_text(page["text"]):
+            for chunk in self.token_chunk(page["text"]):
                 chunks.append({
                     "text": chunk,
                     "metadata": {

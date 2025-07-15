@@ -11,3 +11,5 @@ qdrant:
 chunker:
   chunk_size: 300
   chunk_overlap: 50
+  min_title_font_size: 14
+  min_chunk_len: 200
