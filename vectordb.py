@@ -1,3 +1,4 @@
+import os
 import uuid
 from qdrant_client import QdrantClient
 from qdrant_client.models import PointStruct, VectorParams, Distance
@@ -5,7 +6,7 @@ from qdrant_client.models import PointStruct, VectorParams, Distance
 class QdrantDB:
     def __init__(self, config):
         self.collection_name = config["collection"]
-        self.client = QdrantClient(url=config["url"])
+        self.client = QdrantClient(url=os.getenv("QDRANT_URL", config["url"]))
         self.vector_size = config["vector_size"]
 
         # Création de collection si elle n'existe pas

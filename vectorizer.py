@@ -1,9 +1,10 @@
+import os
 import requests
 
 class OllamaVectorizer:
     def __init__(self, config):
         self.model = config["embedding_model"]
-        self.url = config["url"]
+        self.url = os.getenv("OLLAMA_URL", config["url"])
 
     def embed(self, text):
         response = requests.post(
