@@ -10,3 +10,6 @@ class Config:
 
     def get_qdrant(self):
         return self.cfg["qdrant"]
+
+    def get_chunker(self):
+        return self.cfg["chunker"]

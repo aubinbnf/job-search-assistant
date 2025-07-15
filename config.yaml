@@ -7,3 +7,7 @@ qdrant:
   collection: my_documents
   vector_size: 768
   distance: cosine
+
+chunker:
+  chunk_size: 300
+  chunk_overlap: 50
