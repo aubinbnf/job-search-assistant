@@ -1,0 +1,9 @@
+ollama:
+  url: http://localhost:11434
+  embedding_model: nomic-embed-text
+
+qdrant:
+  url: http://localhost:6333
+  collection: my_documents
+  vector_size: 768
+  distance: cosine
