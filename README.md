@@ -1,5 +1,18 @@
-# Exécuter Qdrant localement
-docker run -d -p 6333:6333 -p 6334:6334 qdrant/qdrant
+# Démarrer l'environnement local
+
+## Installer les dépendances
+pip install -r requirements.txt
+
+## Lancement des conteneurs
+
+### Build (Si c'est la première éxecution)
+docker compose up --build
+
+#### Télécharger les modèles dans le conteneur Ollama
+ollama pull nomic-embed-text
+
+### Run (Si les conteneurs ont déjà été build auparavant)
+docker compose up
 
 # Description de l'architecture du projet
 project/
