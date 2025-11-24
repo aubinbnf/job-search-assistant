@@ -9,7 +9,6 @@ class QdrantDB:
         self.client = QdrantClient(url=os.getenv("QDRANT_URL", config["url"]))
         self.vector_size = config["vector_size"]
 
-        # Création de collection si elle n'existe pas
         if self.collection_name not in [c.name for c in self.client.get_collections().collections]:
             self.client.recreate_collection(
                 collection_name=self.collection_name,

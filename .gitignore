@@ -1,3 +1,46 @@
+# Python
 .venv/
+venv/
+env/
 __pycache__/
-Document.pdf
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+
+# Test documents
+*.pdf
+*.docx
+*.doc
+
+# Generated CVs
+generated_cvs/
+
+# Vector database storage
+qdrant_storage/
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Archive (keep in repo for reference)
+!archive/
