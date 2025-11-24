@@ -1,0 +1,69 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    {\Large \textbf{ {{- personal_info.name -}} }}\\[0.3cm]
+    {{ personal_info.email }} | {{ personal_info.phone }}\\
+    {{ personal_info.location }}\\
+    {% if personal_info.linkedin %}
+    \href{https://{{ personal_info.linkedin }} }{ {{ personal_info.linkedin
+}} }
+    {% endif %}
+\end{center}
+
+\vspace{0.5cm}
+
+% Résumé
+\section*{Profil}
+{{ summary }}
+
+\vspace{0.3cm}
+
+% Expériences
+\section*{Expérience Professionnelle}
+{% for exp in experiences %}
+\textbf{ {{- exp.position -}} } \hfill {{ exp.start_date }} -- {{
+exp.end_date }}\\
+\textit{ {{- exp.company -}} }, {{ exp.location }}
+\begin{itemize}[leftmargin=*,noitemsep]
+{% for mission in exp.description %}
+    \item {{ mission }}
+{% endfor %}
+\end{itemize}
+\vspace{0.2cm}
+{% endfor %}
+
+% Formation
+\section*{Formation}
+{% for edu in education %}
+\textbf{ {{- edu.degree -}} } en {{ edu.field_of_study }} \hfill {{ edu.start_date }}
+-- {{ edu.end_date }}\\
+\textit{ {{- edu.institution -}} }
+\vspace{0.2cm}
+{% endfor %}
+
+% Compétences
+\section*{Compétences Techniques}
+{% for skill in skills.technical %}
+{{ skill }}{% if not loop.last %}, {% endif %}
+{% endfor %}
+
+\vspace{0.3cm}
+
+% Langues
+\section*{Langues}
+{% for lang in skills.languages %}
+\textbf{ {{- lang.name -}} }: {{ lang.level }}{% if not loop.last %}, {% 
+endif %}
+{% endfor %}
+
+\end{document}

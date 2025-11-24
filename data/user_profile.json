@@ -1,0 +1,39 @@
+{
+  "personal_info": {
+    "name": "Jean Dupont",
+    "email": "jean.dupont@email.com",
+    "phone": "+33 6 12 34 56 78",
+    "location": "Paris, France",
+    "linkedin": "linkedin.com/in/jeandupont"
+  },
+  "summary": "Ingénieur logiciel avec 5 ans d'expérience en développement backend...",
+  "experiences": [
+    {
+      "company": "Tech Corp",
+      "position": "Senior Developer",
+      "location": "Paris",
+      "start_date": "2021-01",
+      "end_date": "2024-12",
+      "description": [
+        "Développement d'APIs REST avec FastAPI",
+        "Migration vers architecture microservices"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "UTBM",
+      "degree": "Diplôme d'ingénieur",
+      "field_of_study": "Informatique",
+      "start_date": "2016",
+      "end_date": "2021"
+    }
+  ],
+  "skills": {
+    "technical": ["Python", "Docker", "PostgreSQL"],
+    "languages": [
+      {"name": "Français", "level": "Natif"},
+      {"name": "Anglais", "level": "Courant"}
+    ]
+  }
+}
